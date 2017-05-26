@@ -1,5 +1,5 @@
-[<img src="https://github.com/shrenujgandhi/Readme-Images/blob/master/Course%20Project.png" width="150">](https://github.com/shrenujgandhi/Library-Management-Application)
-[<img src="https://github.com/shrenujgandhi/Readme-Images/blob/master/OODD.png" width="250" height="22">](https://github.com/shrenujgandhi/Library-Management-Application)
+[<img src="https://github.com/shrenujgandhi/Readme-Images/blob/master/AP.png" width="150">](https://github.com/shrenujgandhi/Library-Management-Application)
+[<img src="https://github.com/shrenujgandhi/Readme-Images/blob/master/OODD.png" width="150">](https://github.com/shrenujgandhi/Library-Management-Application)
 
 # Library Management Application
 
