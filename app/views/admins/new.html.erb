@@ -1,0 +1,21 @@
+<h1>Add new admin</h1>
+
+<%= form_for(@admin) do |f| %>
+
+    <p><%= f.label :first_name %>
+      <%= f.text_field :first_name %></p>
+
+    <p><%= f.label :last_name %>
+      <%= f.text_field :last_name %></p>
+
+    <p><%= f.label :email %>
+      <%= f.email_field :email %></p>
+
+    <p><%= f.label :password %>
+      <%= f.password_field :password %></p>
+
+    <p><%= f.label :Re_enter_password %>
+      <%= f.password_field :password_confirmation %></p>
+
+    <p><%= f.submit "Register" %></p>
+<% end %>

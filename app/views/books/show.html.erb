@@ -1,0 +1,49 @@
+<h1><%= @book.title %></h1>
+<p><%= "ISBN : " + @book.isbn %></p>
+<p><%= "Authors : " + @book.author %></p>
+<p><%= "Description : " + @book.description %></p>
+<p><%= "Status : " + @book.status %>
+  <% if (@book.status == "Checked out") && (admin_logged_in?) %>
+      <%if admin_logged_in? %>
+          by <%= @book.checkout_histories.order("issued_at DESC").first.user.email unless @book.checkout_histories.order("issued_at DESC").first.nil? %></p>
+      <%end%>
+  <%end%>
+  <% if admin_logged_in? %>
+      <p><%= link_to "See Checkout history", checkout_book_path(@book) %><p/>
+  <%end%>
+  <br/>
+
+
+  <%if user_logged_in? %>
+      <% if @book.status == "Available" %>
+          <br/>
+          <%= link_to "Checkout", create_checkout_path(@book)%>
+      <% else !(@book.checkout_histories == nil) %>
+          <% if @book.checkout_histories.order("issued_at DESC").first.user == current_user %>
+              <br/>
+              <%= link_to "Return Book", update_checkout_path(@book), data: { confirm: 'Are you sure you want to return the book?'} %>
+          <%else%>
+              <% if @book.email_notifications.any? {|ent| (ent.sent == false) && (ent.user_id == current_user.id) } %>
+                  <br/><td>Already subscribed to email!</td>
+              <% else %>
+                  <br/><td><%= link_to 'Get Email Notification', email_notification_path(@book) %></td>
+              <% end %>
+          <%end%>
+      <% end %>
+  <% elsif admin_logged_in? %>
+      <% if @book.status == "Available" %>
+          <%= form_for :user, url:  create_admin_checkout_path(@book)  do |f|%>
+              <%= f.label "Enter library member EmailID: " %>
+              <%= f.text_field :email%><br/>
+              <%= f.submit "Checkout Book" %>
+          <% end %>
+      <% else !(@book.checkout_histories == nil)%>
+          <%= link_to "Return Book", update_checkout_path(@book) %><br/>
+      <%end%>
+      <br/>
+      <%= link_to 'Edit', edit_book_path(@book) %>&nbsp;&nbsp
+      <%= link_to 'Delete', book_path(@book), method: :delete, data: { confirm: 'Are you sure you want to delete the book?'} %>
+  <%end%>
+
+<br/><br/>
+<%= link_to "View all books", books_path %>

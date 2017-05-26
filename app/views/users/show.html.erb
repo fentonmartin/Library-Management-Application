@@ -1,0 +1,12 @@
+<h3>My Account</h3>
+<p><%= "First Name : " + @user.first_name %></p>
+<p><%= "Last Name :  " + @user.last_name %></p>
+<p><%= "Email :      " + @user.email %></p>
+
+<p><%= link_to "See Checkout history", checkout_user_path(@user) %><p/>
+
+<p><%= link_to "See My recommendations", rec_book_path %><p/>
+
+<p><%= link_to "Recommend a Book", new_recommended_book_path %><p/>
+
+<p><%= link_to "Edit Profile", edit_user_path(@user) %></p>
