@@ -1,4 +1,4 @@
-# rails-library-app
+# Library Management Application
 
 ### Deployment
 
