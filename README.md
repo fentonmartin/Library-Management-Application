@@ -18,7 +18,7 @@ This is the default home page of our application
 
 ### Features currently supported
 
-####Admins
+#### Admins
 
 **1) Login with an email and password**
 
@@ -98,7 +98,7 @@ In order to perform the following tasks (2, 3, 4 , 5) , the admin needs to be **
        From home page, Click on "View all users" link , and then click on "Delete User" of the user.
 
 
-####Library Members
+#### Library Members
 
 **6) Sign up to become a library member**
 
