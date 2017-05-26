@@ -5,7 +5,7 @@
 
 ## Deployment
 
-Deployed the application on Heroku - [Link](https://rails-library-app.herokuapp.com/)  
+Deployed the application on Heroku - [LINK](https://rails-library-app.herokuapp.com/)  
 
 This is the default home page of our application
 
